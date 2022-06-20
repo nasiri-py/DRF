@@ -1,0 +1,17 @@
+{% extends 'blogs/_base.html' %}
+
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block content %}
+    <div>
+        <div style="padding: 0 1.5rem;">
+            <h2>{{ article.title }}</h2>
+            <div>
+                <span style="color: gray">posted by {{ user.username }} on {{ article.publish }}</span>
+                <p>{{ article.text|linebreaks }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
