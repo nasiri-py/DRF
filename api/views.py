@@ -23,8 +23,20 @@ from django.contrib.auth import get_user_model
 
 
 class ArticleViewSet(ModelViewSet):
-    queryset = Article.objects.all()
     serializer_class = ArticleSerializer
+
+    def get_queryset(self):
+        queryset = Article.objects.all()
+
+        status = self.request.query_params.get('status')
+        if status is not None:
+            queryset = queryset.filter(status=status)
+
+        author = self.request.query_params.get('author')
+        if author is not None:
+            queryset = queryset.filter(author__username=author)
+
+        return queryset
 
     def get_permissions(self):
         if self.action == 'list':
