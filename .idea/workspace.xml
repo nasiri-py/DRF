@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a63956b-8f55-4f5a-b6b3-a923f5b22e7e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
-    </list>
+    <list default="true" id="9a63956b-8f55-4f5a-b6b3-a923f5b22e7e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +94,7 @@
       <workItem from="1656267298753" duration="627000" />
       <workItem from="1656307121273" duration="7941000" />
       <workItem from="1656402656091" duration="4650000" />
-      <workItem from="1656432604315" duration="3919000" />
+      <workItem from="1656432604315" duration="4254000" />
     </task>
     <servers />
   </component>
