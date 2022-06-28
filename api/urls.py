@@ -17,5 +17,6 @@ router.register('users', views.UserViewSet, basename='users')
 
 # urlpatterns = router.urls
 urlpatterns = [
-    path("", include(router.urls))
+    path("", include(router.urls)),
+    path("authors/<int:pk>/", views.AuthorRetrieve.as_view(), name='author_detail'),
 ]

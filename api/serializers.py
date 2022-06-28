@@ -11,7 +11,9 @@ class AuthorSerializer(serializers.ModelSerializer):
 
 
 class ArticleSerializer(serializers.ModelSerializer):
-    author = AuthorSerializer()
+    # author = AuthorSerializer()
+    author = serializers.HyperlinkedIdentityField(view_name='api:author_detail')
+
     class Meta:
         model = Article
         # fields = ['author', 'title', 'slug', 'publish', 'text', 'status']
@@ -28,4 +30,5 @@ class ArticleSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
-        fields = '__all__'
+        # fields = '__all__'
+        fields = ['id', 'username', 'email', 'first_name', 'last_name']
