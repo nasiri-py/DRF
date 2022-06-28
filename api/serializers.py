@@ -10,6 +10,13 @@ class ArticleSerializer(serializers.ModelSerializer):
         # fields = ['author', 'title', 'slug', 'publish', 'text', 'status']
         exclude = ['created', 'updated']
 
+    def validate_title(self, value):
+        filter_list = ['php', 'laravel']
+        for i in filter_list:
+            if i in value.lower():
+                raise serializers.ValidationError(f"Don't use bad words!: {i}")
+        return value
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
