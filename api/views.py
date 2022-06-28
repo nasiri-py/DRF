@@ -8,7 +8,7 @@ from .permissions import IsSuperUser, IsAuthorOrReadOnly, IsSuperUserOrStaffRead
 # from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from django.contrib.auth import get_user_model
-from rest_framework.generics import RetrieveAPIView
+# from rest_framework.generics import RetrieveAPIView
 
 
 # class ArticleList(generics.ListCreateAPIView):
@@ -76,6 +76,6 @@ class UserViewSet(ModelViewSet):
 #         return Response(status=204)
 
 
-class AuthorRetrieve(RetrieveAPIView):
-    queryset = get_user_model().objects.all()
-    serializer_class = UserSerializer
+# class AuthorRetrieve(RetrieveAPIView):
+#     queryset = get_user_model().objects.all()
+#     serializer_class = AuthorSerializer
