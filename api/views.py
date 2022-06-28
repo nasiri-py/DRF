@@ -26,6 +26,7 @@ class ArticleViewSet(ModelViewSet):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
     filterset_fields = ['status', 'author__username']
+    search_fields = ['status', 'author__username', 'title', 'text']
 
     # def get_queryset(self):
     #     queryset = Article.objects.all()
