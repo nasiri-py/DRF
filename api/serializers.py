@@ -10,15 +10,16 @@ from django.contrib.auth import get_user_model
 #         fields = ['id', 'username', 'first_name', 'last_name']
 
 
-class AuthorUsernameField(serializers.RelatedField):
-    def to_representation(self, value):
-        return value.username
+# class AuthorUsernameField(serializers.RelatedField):
+#     def to_representation(self, value):
+#         return value.username
 
 
 class ArticleSerializer(serializers.ModelSerializer):
     # author = AuthorSerializer()
     # author = serializers.HyperlinkedIdentityField(view_name='api:author_detail')
-    author = AuthorUsernameField(read_only=True)
+    # author = AuthorUsernameField(read_only=True)
+    author = serializers.CharField(source="author.username", read_only=True)
 
     class Meta:
         model = Article
